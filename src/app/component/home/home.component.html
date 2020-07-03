@@ -4,37 +4,29 @@
 <h1>Deseja praticar esportes coletivos com outras pessoas? Cadastre-se e faremos essa união acontecer!</h1>
 <div class="card">
     <div class="card-body">
-
-        
-
-
-        <form>
-                <div class="form-row">
-                        <div class="form-group col-md-12">
-                          <label for="inputEmail4">Login</label>
-                          <input type="email" class="form-control" id="inputEmail4">
-                        </div>
-                </div>
-
-
-
-            
+        <form [formGroup]="form">
             <div class="form-group">
-                <label for="exampleInputPassword1">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1"  maxlength="8" minlength="8">
-                <a href="#" class="card-link">
-                    <p><u>Esqueci minha senha</u></p>
-                </a>
+                <label for="email">Email</label>
+                <input formControlName="email" id="email" type="text" class="form-control">
+                <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                    <div *ngIf="f.email.errors.required">Email Obrigatorio</div>
+                    <div *ngIf="f.email.errors.email">Por favor, digite um Email Valido </div>
+                </div>
             </div>
-            <button type="button" class="btn btn-primary mr-1">Entrar</button>
-            <button type="button" class="btn btn-primary " [routerLink]="['/cadastro']" ><u>Cadastre-se já</u></button>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input formControlName="senha" type="password" class="form-control" id="password" maxlength="8"
+                    minlength="8" required>
+                <div *ngIf="f.senha.touched && f.senha.invalid" class="alert alert-danger">
+                    <div *ngIf="f.senha.errors.required">Senha Obrigatoria</div>
+                    <div *ngIf="f.senha.errors.senha">Senha deve contem 8 digitos</div>
+                </div>
+            </div>
+            <a href="resetPassword" class="card-link">
+                <p><u>Esqueci minha senha</u></p>
+            </a>
+            <button type="button" class="btn btn-primary mr-1" (click)="setValue()" [routerLink]="['/esportes']">Entrar</button>
+            <button type="button" class="btn btn-primary" [routerLink]="['/cadastro']"><u>Cadastre-se já</u></button>
         </form>
-
-        
-
     </div>
-
 </div>
-
-
-
