@@ -1,66 +1,68 @@
-<div class="card">
-  <div class="card-body">
-    <h3><b>Cadastre-se</b></h3>
-    <form [formGroup]="form">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="nomeCompleto">Nome Completo</label>
-          <input formControlName="nomeCompleto" type="text" class="form-control" id="nomeCompleto" requerid>
-          <div *ngIf="f.nomeCompleto.touched && f.nomeCompleto.invalid" class="alert alert-danger">
-            <div *ngIf="f.nomeCompleto.errors.required">Nome Obrigatorio</div>
-            <div *ngIf="f.nomeCompleto.errors.nomeCompleto">Por favor, digite um Nome Valido </div>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h3><b>Cadastre-se</b></h3>
+      <form [formGroup]="form">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nomeCompleto">Nome Completo</label>
+            <input formControlName="nomeCompleto" type="text" class="form-control" id="nomeCompleto" required>
+            <div *ngIf="f.nomeCompleto.touched && f.nomeCompleto.invalid" class="alert alert-danger">
+              <div *ngIf="f.nomeCompleto.errors.required">Nome Obrigatorio</div>
+              <div *ngIf="f.nomeCompleto.errors.nomeCompleto">Por favor, digite um Nome Valido </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="cpf">CPF</label>
-          <input formControlName="cpf" type="text" id="cpf" class="form-control " placeholder="Ex: 123.456.789-00"
-            cpf-mask="00000000000" maxlength="14" minlength="14" required>
-          <div *ngIf="f.cpf.touched && f.cpf.invalid" class="alert alert-danger">
-            <div *ngIf="f.cpf.errors.required">CPF Obrigatorio</div>
-            <div *ngIf="f.cpf.errors.cpf">Por favor, digite um CPF Valido </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="cpf">CPF</label>
+            <input formControlName="cpf" type="text" id="cpf" class="form-control " placeholder="Ex: 123.456.789-00"
+              required>
+            <div *ngIf="f.cpf.touched && f.cpf.invalid" class="alert alert-danger">
+              <div *ngIf="f.cpf.errors.required">CPF Obrigatorio</div>
+              <div *ngIf="f.cpf.errors.cpf">Por favor, digite um CPF Valido </div>
+            </div>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="idade">Idade</label>
+            <input formControlName="idade" type="text" id="idade" class="form-control " placeholder="Ex.: 01"
+              cpf-mask="00" maxlength="2" minlength="2" required>
+            <div *ngIf="f.idade.touched && f.idade.invalid" class="alert alert-danger">
+              <div *ngIf="f.idade.errors.required">Idade Obrigatorio</div>
+              <div *ngIf="f.idade.errors.idade">Por favor, digite um Idade Valido </div>
+            </div>
           </div>
         </div>
-        <div class="form-group col-md-2">
-          <label for="idade">Idade</label>
-          <input formControlName="idade" type="text" id="idade" class="form-control " placeholder="Ex.: 01"
-            cpf-mask="00" maxlength="2" minlength="2" required>
-          <div *ngIf="f.idade.touched && f.idade.invalid" class="alert alert-danger">
-            <div *ngIf="f.idade.errors.required">Idade Obrigatorio</div>
-            <div *ngIf="f.idade.errors.idade">Por favor, digite um Idade Valido </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" class="form-control" id="email" required>
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+              <div *ngIf="f.email.errors.required">Email Obrigatorio</div>
+              <div *ngIf="f.email.errors.email">Por favor, digite um Email Valido </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="password1">Senha</label>
+            <input formControlName="senha" type="password" class="form-control" id="password" maxlength="8"
+              minlength="8" required>
+            <div *ngIf="f.senha.touched && f.senha.invalid" class="alert alert-danger">
+              <div *ngIf="f.senha.errors.required">Senha Obrigatorio</div>
+              <div *ngIf="f.senha.errors.senha">Por favor, digite uma Senha Valida </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="password">Confirma Senha</label>
+            <input formControlName="confirmaSenha" type="password" class="form-control" id="password" maxlength="8"
+              minlength="8" required>
+            <div *ngIf="f.confirmaSenha.touched && f.confirmaSenha.invalid" class="alert alert-danger">
+              <div *ngIf="f.confirmaSenha.errors.required">Confirma Senha Obrigatorio</div>
+              <div *ngIf="f.confirmaSenha.errors.confirmaSenha">Por favor, digite uma Senha Valida </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="email">Email</label>
-          <input formControlName="email" type="email" class="form-control" id="email" required>
-          <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
-            <div *ngIf="f.email.errors.required">Email Obrigatorio</div>
-            <div *ngIf="f.email.errors.email">Por favor, digite um Email Valido </div>
-          </div>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="password1">Senha</label>
-          <input formControlName="senha" type="password1" class="form-control" id="password1" maxlength="8" minlength="8" required>
-          <div *ngIf="f.senha.touched && f.senha.invalid" class="alert alert-danger">
-            <div *ngIf="f.senha.errors.required">Senha Obrigatorio</div>
-            <div *ngIf="f.senha.errors.senha">Por favor, digite uma Senha Valida </div>
-          </div>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="password">Confirma Senha</label>
-          <input formControlName="confirmaSenha" type="password" class="form-control" id="password" maxlength="8"
-            minlength="8" required>
-          <div *ngIf="f.confirmaSenha.touched && f.confirmaSenha.invalid" class="alert alert-danger">
-            <div *ngIf="f.confirmaSenha.errors.required">Confirma Senha Obrigatorio</div>
-            <div *ngIf="f.confirmaSenha.errors.confirmaSenha">Por favor, digite uma Senha Valida </div>
-          </div>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary mt-2" [routerLink]="['/home']"
-        (click)="setValue()" id="botao">Cadastrar</button>
-    </form>
+        <button type="submit" class="btn btn-primary mt-2" (click)="setValue()" id="botao">Cadastrar</button>
+      </form>
+    </div>
   </div>
 </div>
