@@ -16,7 +16,7 @@ import { AppComponent } from 'src/app/app.component';
 export class CadastroComponent implements OnInit {
 
     form = new FormGroup({
-    nomecompleto: new FormControl('', [Validators.required]),
+    nomeCompleto: new FormControl('', [Validators.required]),
     cpf: new FormControl('', [Validators.required, Validators.maxLength(11)]),
     idade: new FormControl('', [Validators.required, Validators.maxLength(2)]),
     email: new FormControl('', [Validators.required, Validators.email]),

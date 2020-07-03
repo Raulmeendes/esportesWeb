@@ -4,11 +4,11 @@
     <form [formGroup]="form">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="nomecompleto">Nome Completo</label>
-          <input formControlName="nomeCompleto" type="text" class="form-control" id="nomecompleto" requerid>
-          <div *ngIf="f.nomecompleto.touched && f.nomecompleto.invalid" class="alert alert-danger">
-            <div *ngIf="f.nomecompleto.errors.required">Nome Obrigatorio</div>
-            <div *ngIf="f.nomecompleto.errors.nomecompleto">Por favor, digite um Nome Valido </div>
+          <label for="nomeCompleto">Nome Completo</label>
+          <input formControlName="nomeCompleto" type="text" class="form-control" id="nomeCompleto" requerid>
+          <div *ngIf="f.nomeCompleto.touched && f.nomeCompleto.invalid" class="alert alert-danger">
+            <div *ngIf="f.nomeCompleto.errors.required">Nome Obrigatorio</div>
+            <div *ngIf="f.nomeCompleto.errors.nomeCompleto">Por favor, digite um Nome Valido </div>
           </div>
         </div>
       </div>

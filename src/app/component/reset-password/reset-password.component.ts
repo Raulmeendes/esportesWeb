@@ -12,7 +12,7 @@ import { AppComponent } from 'src/app/app.component';
 export class ResetPasswordComponent implements OnInit {
 
   form = new FormGroup({
-    cpf: new FormControl('', [Validators.required, Validators.maxLength(11)]),  
+    cpf: new FormControl('', [Validators.required, Validators.maxLength(11)]),
     email: new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
 
@@ -21,25 +21,25 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  get f(){
+
+  get f() {
     return this.form.controls;
-}
- 
-submit(){
-    if(this.form.status === 'VALID'){
+  }
+
+  submit() {
+    if (this.form.status === 'VALID') {
       console.log(this.form.value);
     }
-}
+  }
 
-setValue(){
-    this.form.setValue({cpf: '', email: ''});
-}
+  setValue() {
+    this.form.setValue({ cpf: '', email: '' });
+  }
 
-resetValue(){
-    this.form.reset({cpf: '', email: ''});
+  resetValue() {
+    this.form.reset({ cpf: '', email: '' });
 
-}   
+  }
 
 
 }
