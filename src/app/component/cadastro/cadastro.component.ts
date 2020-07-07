@@ -60,16 +60,8 @@ export class CadastroComponent implements OnInit {
     this.form.reset({ nomeCompleto: '', cpf: '', idade: '', senha: '', email: '', confirmaSenha: '' });
   }
 
-  validateForm() {
-    return this.user.nomeCompleto == '' ||
-      this.user.cpf == null ||
-      this.user.idade == '' ||
-      this.user.email == '' ||
-      this.user.senha == '' ||
-      this.user.confirmaSenha == '';
-  }
-
  
+  
 }
 
 

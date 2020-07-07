@@ -25,7 +25,7 @@
             <a href="resetPassword" class="card-link">
                 <p><u>Esqueci minha senha</u></p>
             </a>
-            <button type="button" class="btn btn-primary mr-1" (click)="setValue()" [routerLink]="['/esportes']">Entrar</button>
+            <button type="button" class="btn btn-primary mr-1" (click)="setValue()" [routerLink]="['/esportes']" (click)="logarUsuario()">Entrar</button>
             <button type="button" class="btn btn-primary" [routerLink]="['/cadastro']"><u>Cadastre-se já</u></button>
         </form>
     </div>

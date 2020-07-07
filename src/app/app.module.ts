@@ -7,7 +7,7 @@ import { CadastroComponent } from './component/cadastro/cadastro.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { EsportesComponent } from './component/esportes/esportes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { from } from 'rxjs';  
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -21,7 +21,9 @@ import { from } from 'rxjs';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
