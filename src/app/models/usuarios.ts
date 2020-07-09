@@ -1,8 +1,13 @@
 export class Usuarios {
     nomeCompleto: string;
     cpf: number;
-    idade: string; 
+    idade: number; 
     email: string;
     senha: string; 
-    confirmaSenha: string; 
+    confirmarSenha: string; 
+    cidade: string;
+    esportes: string;
+    regiao: string;
+    leste: string;
+    
 }

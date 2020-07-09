@@ -12,8 +12,11 @@ import { AppComponent } from 'src/app/app.component';
 export class ResetPasswordComponent implements OnInit {
 
   form = new FormGroup({
-    cpf: new FormControl('', [Validators.required, Validators.maxLength(11)]),
+    cpf: new FormControl('', [Validators.required, Validators.maxLength(11),Validators.minLength(11)]),
     email: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    senha: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    confirmaSenha: new FormControl('', [Validators.required, Validators.minLength(8)]),
+
   });
 
 

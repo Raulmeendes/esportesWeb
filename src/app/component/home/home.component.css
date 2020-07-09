@@ -1,13 +1,70 @@
-form {
-    /* Apenas para centralizar o form na página */
-    margin: 0 auto;
-    width: 400px;
-    margin-top: 15px;  
-}
 
-.card{
-    /* Apenas para centralizar o form na página */
-    margin: 0 auto;
-    width: 500px;
-    margin-top: 50px;
-}
+
+/* Dispositivos small (telefones em modo paisagem, com 576px ou mais) */
+@media (min-width: 576px) { 
+    form {
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 400px;
+        margin-top: 15px;  
+    }
+    
+    .card{
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 500px;
+        margin-top: 50px;
+        
+    }
+ }
+
+/* Dispositivos médios (tablets com 768px ou mais) */
+@media (min-width: 768px) {
+    form {
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 400px;
+        margin-top: 15px;  
+    }
+    
+    .card{
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 500px;
+        margin-top: 50px;
+    }
+ }
+
+/* Dispositivos large (desktops com 992px ou mais) */
+@media (min-width: 992px) { 
+    form {
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 400px;
+        margin-top: 15px;  
+    }
+    
+    .card{
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 500px;
+        margin-top: 50px;
+    }
+ }
+
+/*  Dispositivos extra large (desktops grandes com 1200px ou mais) */
+@media (min-width: 1200px) { 
+    form {
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 400px;
+        margin-top: 15px;  
+    }
+    
+    .card{
+        /* Apenas para centralizar o form na página */
+        margin: 0 auto;
+        width: 500px;
+        margin-top: 50px;
+    }
+ }

@@ -1,58 +1,57 @@
 <div class="card">
   <div class="card-body">
-    <h3><b>Formulário</b></h3>
-    <form>
-      <div class="form-group">
-        <label for="inputEstado">Qual Estado reside?</label>
-        <select id="inputEstado" class="form-control">
-          <option selected disabled>São Paulo (Capital)</option>
+      <form [formGroup]="form">
+      <h3><b>Formulário</b></h3>
+
+      <div class="form-group col-md-12">
+        <label for="cidade">Qual Estado Reside?</label>
+        <select formControlName="cidade" id="cidade" class="form-control">
+          <option selected>São Paulo (Capital)</option>
         </select>
+        <div *ngIf="f.cidade.touched && f.cidade.invalid" class="alert alert-danger">
+            <div *ngIf="f.cidade.errors.required">aaaaaaaaaaaaaaaaaa</div>
+            <div *ngIf="f.cidade.errors.cidade">dddddddddddddddd</div>
+        </div>
       </div>
-      <p>Selecione a região que reside?</p>
-      <div class="form-check ">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Zona Leste
-        </label>
+     
+      <div class="form-group col-md-12">
+        <label for="esportes">Qual Esporte deseja praticar?</label>
+        <input formControlName="esportes" id="esportes" type="text" class="form-control">
+        <div *ngIf="f.esportes.touched && f.esportes.invalid" class="alert alert-danger">
+            <div *ngIf="f.esportes.errors.required">Esporte Obrigatório</div>
+            <div *ngIf="f.esportes.errors.esportes">Por favor, digite um Esporte Valido</div>
+        </div>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Zona Norte
-        </label>
+      
+    <p>Selecione a região que reside?</p>
+    <div class="form-check ">
+      <input formControlName="leste" class="form-check-input" type="checkbox" value="1" id="leste">
+      <label class="form-check-label" for="leste">Zona Leste</label>
+      <div *ngIf="f.leste.touched && f.leste.invalid" class="alert alert-danger" required>
+          <div *ngIf="f.leste.errors.required">Esporte Obrigatório</div>
+          <div *ngIf="f.leste.errors.leste">Por favor, digite um Esporte Valido</div>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-        <label class="form-check-label" for="defaultCheck3">
-          Zona Sul
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-        <label class="form-check-label" for="defaultCheck3">
-          Zona Oeste
-        </label>
-      </div>
-      <p>Qual Esporte deseja praticar?</p>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Futebol
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Basquete
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-        <label class="form-check-label" for="defaultCheck3">
-          Vôlei
-        </label>
-      </div>
-      <p>Qual melhor período, para pratica do Esporte?</p>
+    </div>
+    <div class="form-check">
+      <input formControlName="norte" class="form-check-input" type="checkbox" value="2" id="regiao">
+      <label class="form-check-label" for="defaultCheck2">
+        Zona Norte
+      </label>
+    </div>
+    <div class="form-check">
+      <input formControlName="sul" class="form-check-input" type="checkbox" value="3" id="regiao">
+      <label class="form-check-label" for="defaultCheck3">
+        Zona Sul
+      </label>
+    </div>
+    <div class="form-check">
+      <input formControlName="oeste" class="form-check-input" type="checkbox" value="4" id="regiao">
+      <label class="form-check-label" for="defaultCheck3">
+        Zona Oeste
+      </label>
+    </div>
+
+    <p>Qual melhor período, para pratica do Esporte?</p>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
         <label class="form-check-label" for="defaultCheck1">
@@ -71,7 +70,11 @@
           Noite
         </label>
       </div>
-      <button type="button" class="btn btn-primary" (click)="finish()" disabled> Finalizar Cadastro </button>
-    </form>
+
+      <button type="button" class="btn btn-primary mr-1" (click)="setValue()">Finalizar</button>
+     
+    
+
+      </form>
   </div>
 </div>
