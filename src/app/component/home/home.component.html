@@ -4,7 +4,7 @@
 <h1>Deseja praticar esportes coletivos com outras pessoas? Cadastre-se e faremos essa união acontecer!</h1>
 <div class="card">
     <div class="card-body">
-        <form [formGroup]="form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input formControlName="email" id="email" type="text" class="form-control">
@@ -25,7 +25,7 @@
             <a href="resetPassword" class="card-link">
                 <p><u>Esqueci minha senha</u></p>
             </a>
-            <button type="button" class="btn btn-primary mr-1" (click)="setValue()" [routerLink]="['/esportes']" (click)="logarUsuario()">Entrar</button>
+            <button type="submit" class="btn btn-primary mr-1">Entrar</button>
             <button type="button" class="btn btn-primary" [routerLink]="['/cadastro']"><u>Cadastre-se já</u></button>
         </form>
     </div>

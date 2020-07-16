@@ -4,6 +4,9 @@ import {HttpClient, HttpHeaders, } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Login} from '../models/loginModal'
+import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import {AuthenticationService} from '../service/authenticationService'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -11,7 +14,7 @@ const httpOptions = {
   })
 };
 
-var api = 'localhost:8080/';
+var apiUrl = 'localhost:8080';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +23,22 @@ var api = 'localhost:8080/';
 
 export class LoginService {
 
-    constructor(private httpClient: HttpClient){}
+    constructor(
+      private httpClient: HttpClient,
+      private router: Router,
+      private authenticationService: AuthenticationService,
+      private formBuilder: FormBuilder
+      ) {
+        
+      }
+
+      ngOnInit(){
+        
+      }
 
     logarUsuario(login: Login): Observable<any>{
         return this.httpClient
-        .post(api + 'login', login, httpOptions)
+        .post(apiUrl + '/usuario', login, httpOptions)
         .pipe(map(res => res));
     }
 }

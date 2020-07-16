@@ -2,7 +2,7 @@
   "name": "esportes",
   "version": "0.0.0",
   "scripts": {
-    "start": "node server.js",
+    "start": "ng serve --proxy-config proxy.config.js",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
