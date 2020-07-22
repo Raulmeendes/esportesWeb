@@ -8,15 +8,6 @@ import { AppComponent } from 'src/app/app.component';
 import { Usuarios } from '../../models/usuarios'
 import { Route } from '@angular/compiler/src/core';
 
-
-
-
-
-
-
-
-
-
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -37,10 +28,6 @@ export class CadastroComponent implements OnInit {
     
 
   });
-
-
-
-  
 
   constructor(private route: Router) {}
  
@@ -76,21 +63,8 @@ export class CadastroComponent implements OnInit {
     this.form.reset({ nomeCompleto: '', cpf: '', idade: '',  email: '', senha: '', confirmarSenha: '' });
   }
 
-<<<<<<< Updated upstream
  
   
-=======
-  validateForm() {
-    return this.user.nomeCompleto == '' ||
-      this.user.cpf == null ||
-      this.user.idade == null ||
-      this.user.email == '' ||
-      this.user.senha == '' ||
-      this.user.confirmarSenha == '';
-  }
-
-
->>>>>>> Stashed changes
 }
 
 

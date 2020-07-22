@@ -7,14 +7,11 @@ import { CadastroComponent } from './component/cadastro/cadastro.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { EsportesComponent } from './component/esportes/esportes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-<<<<<<< Updated upstream
-import { HttpClientModule} from '@angular/common/http'
-=======
+import {HttpClientModule} from '@angular/common/http'
 import { from } from 'rxjs';  
 import { ConfirmEqualValidatorDirective } from './component/cadastro/confirm-equal-validator.directive';
 
 
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -31,15 +28,9 @@ import { ConfirmEqualValidatorDirective } from './component/cadastro/confirm-equ
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< Updated upstream
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
-=======
-    ReactiveFormsModule
-   
-    
->>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]
