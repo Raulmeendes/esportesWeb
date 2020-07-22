@@ -8,6 +8,6 @@ export class Usuarios {
     cidade: string;
     esportes: string;
     regiao: string;
-    leste: string;
+    
     
 }
