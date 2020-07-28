@@ -16,88 +16,64 @@ import { first } from 'rxjs/operators';
 })
 
 
-
 export class CadastroComponent implements OnInit {
 
-  cadastroForm = new FormGroup({
-    nomeCompleto: new FormControl('', [Validators.required]),
-    cpf: new FormControl('', [Validators.required, Validators.maxLength(11),Validators.minLength(11)]),
-    idade: new FormControl('', [Validators.required, Validators.maxLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    senha: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    confirmarSenha: new FormControl('', [Validators.required, Validators.minLength(8)])
-    
-
-  });
-
-  submitted = false;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private cadastroService: CadastroServiceService) {}
  
-  usuarios: Cadastro;
-  model: any = {};
-  user: Usuarios;
+ 
+  novoCadastro: Cadastro;
+  novosCadastros: Cadastro[];
 
   ngOnInit(): void {
+    this.novoCadastro = new Cadastro();
+  }
 
-    this.cadastroForm = this.formBuilder.group({
-      nomeCompleto: ['', Validators.required],
-      cpf: ['', Validators.required, Validators.pattern('([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})')],
-      idade: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      senha: ['', Validators.required],
-      confirmarSenha: ['', Validators.required]
-    });
+
+
+  limparCampos(){
+    this.novoCadastro.nome == '' ||
+    this.novoCadastro.email == '' ||
+    this.novoCadastro.cpf == ''  ||
+    this.novoCadastro.idade == null ||
     
+    this.novoCadastro.senha == '' 
   }
 
-  
-
-
-  get f() {
-    return this.cadastroForm.controls;
+  validarCampos(){
+    return this.novoCadastro.nome == '' ||
+    this.novoCadastro.email == '' ||
+    this.novoCadastro.cpf == ''  ||
+    this.novoCadastro.idade == null ||
+   
+    this.novoCadastro.senha == ''
   }
 
-  submit() {
-    if (this.cadastroForm.status === 'VALID') {
-      console.log(this.cadastroForm.value);
-    }
-  }
-
-  onSubmit() {
-    this.submitted = true;
-    if(this.cadastroForm.invalid){
-      return;
-    }
-
-    this.cadastroService.cadastrarUsuario(this.usuarios)
-    .pipe(first())
-    .subscribe(
-      data => {
-        alert("Cadastro efetuado com sucesso")
-        this.router.navigate(['/home'])
-      },
-      error => {
-        alert("erro")
-      } 
-    )
-
-
-/*   if(this.cadastroForm.status === 'VALID'){
-      this.cadastroForm.setValue({ nomeCompleto: '', cpf: '', idade: '',  email: '', senha: '', confirmarSenha: '' });
-      this.resetValue()
-      alert("Cadastro Realizado com Sucesso")
-      this.router.navigate(['/home']);
+  enviarCadastro(){
+    
+    if(!this.validarCampos()){
+     
+      this.cadastroService.cadastrarUsuario(this.novoCadastro)
+      .subscribe(
+        user => this.adcUsuario = user, 
+        
+        error => console.error(error))
+        alert("cadastro efetuado com sucesso")
+       //this.router.navigate(['/home'])
+      
+      }else{
+        alert("verifique os campos informados")
       }
-*/
+      this.limparCampos()
+
+  }
+  adcUsuario(usuario: Cadastro){
+    this.novosCadastros.push(usuario)
+
   }
 
-  resetValue() {
-    this.cadastroForm.reset({ nomeCompleto: '', cpf: '', idade: '',  email: '', senha: '', confirmarSenha: '' });
-  }
 
-  
-  
+
 }
 
 

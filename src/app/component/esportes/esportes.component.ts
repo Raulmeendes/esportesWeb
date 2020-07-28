@@ -16,8 +16,8 @@ export class EsportesComponent implements OnInit {
 
   form = new FormGroup({
     cidade: new FormControl('', [Validators.required]),  
-    esportes: new FormControl('', [Validators.required]),
-    leste: new FormControl('', [Validators.required])
+    esportes: new FormControl('', [Validators.required])
+    
   });
 
   constructor(private route: Router) { }
@@ -50,13 +50,13 @@ setValue(){
 }
 
 resetValue(){
-    this.form.reset({cidade: '', esportes: '', leste: ''});
+    this.form.reset({cidade: '', esportes: ''});
 }   
 
 validateForm() {
   return this.user.cidade == '' ||
-  this.user.esportes== ''||
-  this.user.leste== '';
+  this.user.esportes== ''
+  
 }
 
 }

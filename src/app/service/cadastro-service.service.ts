@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
@@ -28,9 +27,9 @@ export class CadastroServiceService {
 
   ) { }
 
-  cadastrarUsuario(cadastros: Cadastro): Observable<any> {
+  cadastrarUsuario(usuarios: Cadastro): Observable<any> {
     return this.httpClient
-    .post(urlApi + '/api/usuarios', cadastros, httpOptions)
+    .post('https://api-sportes.herokuapp.com/api/usuarios', usuarios, httpOptions)
     .pipe(map(res => res))
   }
 }
